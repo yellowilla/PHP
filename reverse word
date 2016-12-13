@@ -1,0 +1,12 @@
+<?php 
+$name=array("s","t","r","i","n","g");
+
+for($left=0, $right=count($name)-1; $left<$right; $left++,$right--)
+{
+	$tmp=$name[$left];
+	$name[$left]=$name[$right];
+	$name[$right]=$tmp;
+}
+
+echo $name[0].$name[1].$name[2].$name[3].$name[4].$name[5];
+?>
