@@ -1,0 +1,26 @@
+<?php
+class Car {
+    public $speed = 0; //汽车的起始速度是0
+    
+    public function speedUp() {
+        $this->speed += 10;
+        return $this->speed;
+    }
+}
+//定义继承于Car的Truck类
+class Truck extends Car
+{
+    public function speedUp() {
+        
+        //以下两行注释部分代码运行 ，输出结果为 50 
+        // $this->speed += 50;
+        // return $this->speed;
+        
+        //输出结果为60
+        $this->speed = parent::speedUp() + 50;
+    }
+}
+
+$car = new Truck();
+$car->speedUp();
+echo $car->speed;
